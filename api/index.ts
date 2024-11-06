@@ -16,8 +16,10 @@ app.get("/cities", async (_req, res) => {
   res.json(data);
 });
 
-app.get("/products", async (_req, res) => {
-  const response = await fetch(PRODUCTS_URL);
+app.get("/products", async (req, res) => {
+  const city_id = req.query.city_id;
+
+  const response = await fetch(`${PRODUCTS_URL}${city_id ? `&city_id=${city_id}` : ""}`);
   const data = await response.json();
 
   res.json(data);
