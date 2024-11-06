@@ -10,6 +10,7 @@
 
     // Bundler mode
     "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
 
     // Best practices
